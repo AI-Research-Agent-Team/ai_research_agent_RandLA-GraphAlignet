@@ -789,13 +789,19 @@ This project is licensed under the MIT License - see the [LICENSE](../../../../L
 - **Open3D**: 3D data processing library
 - **Dash & Plotly**: Interactive visualization framework
 
+## License
+
+This repository extends RandLA-Net (Hu et al., CVPR 2020) for multilingual semantic graph alignment.  
+Original code: https://github.com/QingyongHu/RandLA-Net  
+Licensed under CC BY-NC-SA 4.0.
+
 ## 📞 Support
 
 For questions, issues, or contributions:
 
-- 📧 **Email**: [support@randla-graphalign.com](mailto:support@randla-graphalign.com)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/your-repo/discussions)
+- 📧 **Email**: [Nurcholisadam@gmail.com](mailto:support@randla-graphalign.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/AI-Research-Agent-Team/ai_research_agent_RandLA-GraphAlignet/)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/AI-Research-Agent-Team/ai_research_agent_RandLA-GraphAlignet//discussions)
 - 📖 **Documentation**: [Full Documentation](https://randla-graphalign.readthedocs.io)
 
 ---
