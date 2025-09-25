@@ -39,3 +39,13 @@ jobs:
           assert metrics.multilingual_accuracy > 0.5
           print('✅ All validation checks passed')
           "
+![CI](https://github.com/AI-Research-Agent-Team/ai_research_agent_RandLA-GraphAlignet/actions/workflows/ci.yml/badge.svg)
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Runs daily at 2 AM UTC
+
+- name: Generate RDF triples
+  run: python scripts/export_rdf.py
+
+- name: Run SPARQL queries
+  run: python scripts/query_sparql.py
