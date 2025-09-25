@@ -1,0 +1,41 @@
+name: CI for RandLA-GraphAlignet
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python dependencies.py
+
+      - name: Run component tests
+        run: |
+          python RandLA_GraphAlignNet.py
+          python GraphSemanticProjector.py
+          python annotate_multilingual.py
+          python evaluate_alignment.py
+
+      - name: Validate graph consistency
+        run: |
+          python -c "
+          from evaluate_alignment import demo_evaluation_harness
+          evaluator, metrics, results = demo_evaluation_harness()
+          assert metrics.graph_consistency > 0.5
+          assert metrics.multilingual_accuracy > 0.5
+          print('✅ All validation checks passed')
+          "
