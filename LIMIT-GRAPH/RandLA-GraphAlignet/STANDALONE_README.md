@@ -465,6 +465,13 @@ gcloud run deploy randla-graphalignnet --image gcr.io/project/randla-graphalignn
 az container create --resource-group myResourceGroup --name randla-graphalignnet --image randla-graphalignnet
 ```
 
+
+### CI Badge and COntributor Trust:
+'''bash
+![CI](https://github.com/AI-Research-Agent-Team/ai_research_agent_RandLA-GraphAlignet/actions/workflows/ci.yml/badge.svg)
+'''
+
+
 ## 📞 Support
 
 ### Getting Help
@@ -482,5 +489,6 @@ az container create --resource-group myResourceGroup --name randla-graphalignnet
 ---
 
 **Built for standalone deployment with ❤️**
+
 
 *Enabling multilingual spatial reasoning anywhere, anytime.*
