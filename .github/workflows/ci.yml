@@ -254,4 +254,7 @@ jobs:
         pip install bandit
         bandit -r . -f json -o bandit-report.json || true
 
+    - name: Build Docker image
+      run: docker build -f LIMIT-GRAPH/RandLA-GraphAlignet/Dockerfile .
+
 
