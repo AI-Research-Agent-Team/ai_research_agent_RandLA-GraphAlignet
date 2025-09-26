@@ -60,3 +60,6 @@ RUN pip install --upgrade pip \
  && python dependencies.py
 
 CMD ["python", "main.py", "--mode", "process", "--num-points", "100", "--languages", "en"]
+
+- name: Build Docker image
+  run: docker build -f path/to/Dockerfile .
