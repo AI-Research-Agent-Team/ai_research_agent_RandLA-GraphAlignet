@@ -257,4 +257,10 @@ jobs:
     - name: Build Docker image
       run: docker build -f LIMIT-GRAPH/RandLA-GraphAlignet/Dockerfile .
 
+    - name: Run security scan
+      run: |
+        pip install pip-audit bandit
+        pip-audit || true
+        bandit -r . -f json -o bandit-report.json || true
+
 
