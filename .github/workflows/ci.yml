@@ -146,7 +146,7 @@ jobs:
         "
     
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: test-outputs-${{ matrix.python-version }}
@@ -249,12 +249,4 @@ jobs:
       run: |
         pip install bandit
         bandit -r . -f json -o bandit-report.json || true
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: your-artifact-name
-        path: your-artifact-path
-
-
 
