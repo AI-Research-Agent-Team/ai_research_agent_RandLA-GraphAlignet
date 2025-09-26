@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+    - uses: actions/upload-artifact@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
@@ -39,6 +39,7 @@ jobs:
     
     - name: Cache pip dependencies
       uses: actions/cache@v3
+      
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -46,6 +47,7 @@ jobs:
           ${{ runner.os }}-pip-
     
     - name: Install system dependencies
+         
       run: |
         sudo apt-get update
         sudo apt-get install -y libgl1-mesa-glx libglib2.0-0
@@ -161,7 +163,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    
+    - uses: actions/upload-artifact@v3
     - name: Set up Python 3.9
       uses: actions/setup-python@v4
       with:
@@ -207,7 +209,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    
+    - uses: actions/upload-artifact@v3
     - name: Build Docker image
       run: |
         docker build -t randla-graphalignnet .
@@ -221,7 +223,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    
+    - uses: actions/upload-artifact@v3
     - name: Run security scan
       uses: pypa/gh-action-pip-audit@v1.0.8
       with:
@@ -253,5 +255,6 @@ jobs:
       with:
         name: your-artifact-name
         path: your-artifact-path
+
 
 
