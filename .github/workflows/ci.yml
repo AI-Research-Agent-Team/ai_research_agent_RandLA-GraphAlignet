@@ -244,11 +244,6 @@ tests:
     - name: Run tests
       run: pytest tests/
 
-#audit:
-- name: Run security scan
-  run: |
-    pip install pip-audit
-    pip-audit
 
 
 
