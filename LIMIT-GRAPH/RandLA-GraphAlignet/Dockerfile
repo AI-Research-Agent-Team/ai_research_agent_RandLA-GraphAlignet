@@ -55,6 +55,8 @@ LABEL description="Multilingual Spatial Reasoning for 3D Point Clouds with Neo4j
 # root of dockerfile
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip \
+ && pip install -r requirements.txt \
+ && python dependencies.py
 
-CMD ["python", "annotate_multilingual.py"]
+CMD ["python", "main.py", "--mode", "process", "--num-points", "100", "--languages", "en"]
