@@ -3,7 +3,7 @@
 Dependencies & Setup for RandLA-GraphAlignNet
 Extends RandLA-Net for semantic graph alignment and multilingual spatial reasoning
 """
-
+pip install neo4j
 import sys
 import os
 from typing import Dict, List, Any, Optional, Tuple, Union
@@ -333,3 +333,4 @@ else:
         setup_environment()
     except:
         pass  # Ignore errors during import
+
