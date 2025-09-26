@@ -239,15 +239,16 @@ jobs:
 
         path: bandit-report.json
 
-jobs:
-  tests:
+
+tests:
     - name: Run tests
       run: pytest tests/
 
-audit:
+#audit:
 - name: Run security scan
   run: |
     pip install pip-audit
     pip-audit
+
 
 
