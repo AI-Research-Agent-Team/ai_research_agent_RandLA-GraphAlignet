@@ -63,3 +63,4 @@ CMD ["python", "main.py", "--mode", "process", "--num-points", "100", "--languag
 
 - name: Build Docker image
   run: docker build -f path/to/Dockerfile .
+
