@@ -8,8 +8,9 @@ torch-geometric>=2.0.0
 open3d>=0.13.0
 
 # Graph Processing
-networkx>=2.8.0
-neo4j>=5.0.0
+networkx>=3.2.1
+neo4j>=5.14.0
+dash=2.14.1
 
 # Scientific Computing
 numpy>=1.21.0
@@ -39,4 +40,5 @@ flake8>=4.0.0
 
 # Optional: For better performance
 # faiss-cpu>=1.7.0
+
 # faiss-gpu>=1.7.0  # Uncomment for GPU support
