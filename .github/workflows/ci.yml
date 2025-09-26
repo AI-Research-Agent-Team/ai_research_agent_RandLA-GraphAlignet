@@ -240,9 +240,9 @@ jobs:
         path: bandit-report.json
 
 
-tests:
     - name: Run tests
       run: pytest tests/
+
 
 
 
