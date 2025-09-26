@@ -31,7 +31,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/upload-artifact@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
@@ -162,7 +161,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/upload-artifact@v3
     - name: Set up Python 
       uses: actions/setup-python@v4
       with:
@@ -210,13 +208,13 @@ jobs:
       - name: Build Docker image
         run: docker build -f LIMIT-GRAPH/RandLA-GraphAlignet/Dockerfile .
 
-        
+
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/upload-artifact@v3
-    - name: Build Docker image
-      run: |
-        docker build -t randla-graphalignnet .
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+          run: |
+              docker build -t randla-graphalignnet .
+
     
     - name: Test Docker container
       run: |
@@ -262,6 +260,7 @@ jobs:
         pip install pip-audit bandit
         pip-audit || true
         bandit -r . -f json -o bandit-report.json || true
+
 
 
 
