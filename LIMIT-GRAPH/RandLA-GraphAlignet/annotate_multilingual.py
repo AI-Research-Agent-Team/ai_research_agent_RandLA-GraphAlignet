@@ -28,6 +28,21 @@ except ImportError:
         'hi': {'name': 'Hindi', 'spatial_terms': ['ऊपर', 'नीचे', 'बाएं', 'दाएं', 'पास', 'दूर', 'अंदर', 'बाहर']}
     }
 
+#neo4j_connector
+from neo4j_connector import Neo4jConnector
+
+neo4j = Neo4jConnector("bolt://localhost:7687", "neo4j", "_KDITp62FstVa-ImKe1fdScIlkdOhrRUSdJ1uFNcook")
+
+for ann in annotations:
+    neo4j.create_node("SpatialAnnotation", {
+        "id": ann.point_id,
+        "label": ann.label,
+        "language": ann.language
+    })
+
+neo4j.close()
+
+
 @dataclass
 class SpatialAnnotation:
     """Represents a spatial annotation with multilingual support"""
