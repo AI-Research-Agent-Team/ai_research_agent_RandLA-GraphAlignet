@@ -208,7 +208,6 @@ jobs:
       - name: Build Docker image
         run: docker build -f LIMIT-GRAPH/RandLA-GraphAlignet/Dockerfile .
 
-
     steps:
       - uses: actions/checkout@v3
       - name: Build Docker image
@@ -225,7 +224,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/upload-artifact@v3
     - name: Run security scan
       uses: pypa/gh-action-pip-audit@v1.0.8
       with:
@@ -237,7 +235,6 @@ jobs:
         bandit -r . -f json -o bandit-report.json || true
     
     - name: Upload security report
-      uses: actions/upload-artifact@v3
       with:
         name: security-report
 
@@ -260,6 +257,7 @@ jobs:
         pip install pip-audit bandit
         pip-audit || true
         bandit -r . -f json -o bandit-report.json || true
+
 
 
 
