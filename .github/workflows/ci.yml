@@ -243,7 +243,10 @@ jobs:
     - name: Run tests
       run: pytest tests/
 
-
+    - name: Run Bandit security linter
+      run: |
+        pip install bandit
+        bandit -r . -f json -o bandit-report.json || true
 
 
 
