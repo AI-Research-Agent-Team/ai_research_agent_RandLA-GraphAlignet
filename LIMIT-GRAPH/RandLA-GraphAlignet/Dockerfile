@@ -48,4 +48,13 @@ CMD ["python", "main.py", "--mode", "demo", "--languages", "en", "es", "ar", "id
 # Labels
 LABEL maintainer="AI Research Agent Team"
 LABEL version="1.0.0"
+
 LABEL description="Multilingual Spatial Reasoning for 3D Point Clouds with Neo4j Integration"
+
+
+# root of dockerfile
+COPY . .
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "annotate_multilingual.py"]
