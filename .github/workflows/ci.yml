@@ -39,12 +39,21 @@ jobs:
           assert metrics.multilingual_accuracy > 0.5
           print('✅ All validation checks passed')
           "
-  on:
-    schedule:
-      - cron: '0 2 * * *'  # Runs daily at 2 AM UTC
-  
-  - name: Generate RDF triples
-    run: python scripts/export_rdf.py
+job:
+   neo4j-connector:
+    - name: Connect to Neo4j and push annotations
+      run: |
+        python annotate_multilingual.py
+        python neo4j_connector.py
+        
+    env:
+        NEO4J_URI: ${{ secrets.NEO4J_URI }}
+        NEO4J_USER: ${{ secrets.NEO4J_USER }}
+        NEO4J_PASS: ${{ secrets.NEO4J_PASS }}
+
+
+ # - name: Generate RDF triples
+  #  run: python scripts/export_rdf.py
 
   
   - name: Run SPARQL queries
