@@ -777,10 +777,6 @@ python -m pytest tests/
 - Include multilingual examples
 - Maintain backward compatibility
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](../../../../LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - **RandLA-Net**: Original architecture for efficient point cloud processing
@@ -789,7 +785,7 @@ This project is licensed under the MIT License - see the [LICENSE](../../../../L
 - **Open3D**: 3D data processing library
 - **Dash & Plotly**: Interactive visualization framework
 
-## License
+## 📄 License
 
 This repository extends RandLA-Net (Hu et al., CVPR 2020) for multilingual semantic graph alignment.  
 Original code: https://github.com/QingyongHu/RandLA-Net  
