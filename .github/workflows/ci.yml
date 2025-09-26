@@ -58,4 +58,3 @@ job:
   
   - name: Run SPARQL queries
   run: python scripts/query_sparql.py
-*/
